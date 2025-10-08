@@ -1,0 +1,11 @@
+
+a=int(input())
+b=int(input())
+c=int(input())
+   
+d=int(input())
+e=int(input())
+f=int(input())
+   
+print(int((d-a)*3600)+int((e-b)*60)+int(f-c))
+ 
