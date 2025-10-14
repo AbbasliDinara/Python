@@ -1,0 +1,14 @@
+import random
+a=random.randint(1,1000)
+count=0
+while True:
+  b=int(input())
+  count=count+1
+  if a==b:
+    print("Tebrikler")
+    break
+  elif a>b:
+    print("Yuxari cix")
+  else:
+    print("Asagi dus")
+print(count)
