@@ -1,0 +1,7 @@
+a = int(input())
+b = int(input())
+c = int(input())
+#saniye deqiqeye cevir
+d=b+c/60
+#saatin bucagi +deqiqenin bucagi
+print(360/12*a+360/(12*60)*d)
