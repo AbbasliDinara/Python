@@ -1,0 +1,110 @@
+class Felidae:
+  def __init__(self,diet):
+    self.family_name="Felidae"
+    self.legs=4
+    self.ears=2
+    self.diet=diet
+
+  def info (self):
+    print(f"{self.family_name} ailəsinə aid oldugundan {self.legs} ayağı və {self.ears} qulağı var,  {self.diet}'dirlər.")
+
+
+class Pantherinae(Felidae):
+  def __init__(self,diet):
+    Felidae.__init__(self,diet)
+    self.subfamily_name="Pantherinae"
+    self.hunt_style="Gizli və güclü hücum"
+    self.habitat="Tropik meşələr, savannalar və dağlıq ərazilər"
+    self.animal_of_sound="roar"
+#roar miew
+  def feature(self):
+    print(f"{self.subfamily_name} fesilesinin üzvü oldugundan {self.animal_of_sound} sesi ve guclu ov instinkti var. ")
+
+class Panthera(Pantherinae): ##birinci novu (aslan peleng)
+
+  def __init__(self,diet, name):
+    Pantherinae. __init__(self,diet)
+    self.pant_subfamily_name="Panthera"
+    self.name=name
+
+  
+  def sound(self):
+    print(f"{self.name}'lər {self.pant_subfamily_name} alt fəsiləsinə aiddir.  Buna görə {self.name}'lər {self.animal_of_sound} sesi cixardir")
+
+  def details(self):
+    print(f"{self.name} ({self.pant_subfamily_name})- Ov terzi: {self.hunt_style}, Muhit: {self.habitat}, Qidalanma tipi: {self.diet}")
+  
+class Neofelis(Pantherinae):#ikinci novu (bebir)
+  def __init__(self,diet,name):
+    Pantherinae. __init__(self,diet)
+    self.pant_subfamily_name="Neofelis"
+    self.hunt_style="Agacdan atılaraq hücum"
+    self.habitat="Six meseler"
+    self.name=name
+
+
+
+  def sound(self):
+    print(f"{self.name}'lər {self.pant_subfamily_name} alt fəsiləsinə aiddir.  Buna görə {self.name}'lər {self.animal_of_sound} sesi cixardir")
+  
+  def details(self):
+    print(f"{self.name} {self.pant_subfamily_name}'lər- Ov terzi: {self.hunt_style}, Muhit: {self.habitat}, Qidalanma tipi: {self.diet}")
+
+
+class Felinae(Felidae):
+
+  def __init__ (self,diet):
+    Felidae.__init__(self,diet)
+    self.subfamily_name="Felinae"
+    self.hunt_style="Sürətli və çevik hücum"
+    self.habitat="Ev muhiti, çollər və meseler"
+    self.animal_of_sound2="miew"
+
+  def feature(self):
+        print(f"{self.subfamily_name} fesilesinin üzvü oldugundan {self.animal_of_sound2} sesi və insanlara uyğunlaşma qabiliyyəti var.")
+        # \n"
+             # f"Ov tərzi: {self.hunt_style}, Mühit: {self.habitat} , Qidalanma tipi: {self.diet}")
+   
+class Felis(Felinae): #(pisik)
+
+  def __init__(self,diet, name):
+    Felinae.__init__(self,diet)
+    self.fel_subfamily_name="Felis"
+    self.name=name
+    
+  def sound(self):
+    print(f"{self.name}'lər {self.fel_subfamily_name} alt fəsiləsinə aiddir.  Buna görə {self.name}'lər  {self.animal_of_sound2} sesi cixardir")
+
+  def details(self):
+    print(f"{self.name} ({self.fel_subfamily_name})- Ov terzi: {self.hunt_style}, Muhit: {self.habitat}, Qidalanma tipi: {self.diet}")
+
+
+
+
+/*
+
+lion = Panthera("Ət yeyən", "Aslan")
+lion.sound()
+lion.info()
+lion.feature()
+lion.details()
+
+
+cat = Felis("Ət yeyən", "Pişik")
+cat.sound()
+cat.info()
+cat.feature()
+cat.details()
+
+bebir = Neofelis("Ət yeyən","Bebir")
+bebir.sound()
+bebir.info()
+bebir.feature()
+bebir.details()
+
+
+
+
+
+
+*/
