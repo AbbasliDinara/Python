@@ -1,0 +1,13 @@
+#Sual 1: 2 zər atılır. Cəmin 5 olma ehtimalını hesabla
+count1=0
+count2=0
+
+n=10000
+for i in range(n):
+    if np.random.randint(1,7) == 5:
+        count1 += 1
+        
+    else:
+        count2+=1
+        
+print(count1/n)
