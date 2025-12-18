@@ -1,0 +1,12 @@
+#Sual 3: Fərz edək ki, zər 4 üzlüdür (1,2,3,4). Hər bir üzün düşmə ehtimalını hesabla.
+d = {1:0, 2:0, 3:0, 4:0}
+
+n = 10000
+
+for i in range(n):
+    zer1 = np.random.randint(1,5)
+    d[zer1] += 1
+
+for zer1 in d:
+    d[zer1]=d[zer1]/n
+print(d)
