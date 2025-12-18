@@ -1,0 +1,39 @@
+#Sual 7 (Nisbətən çətin). Fərz edək ki, bizdə n-üzlü zər var (n>=3). Onu iki dəfə atıb cəmləyirik. Üzlərin sayının artması, ortalamaya (Expected value) və variance-a nəcə təsir göstərəcək?
+#Vizuallaşdırma (optional) kömək:
+#zer => zerlerin uzunun sayini gosteren np.array (3,4,5....)
+#ev  => ortalamalari saxlayan np.array (3 uzlunun ortalamasi, 4 uzlunun ortalamasi ve s.)
+#plt.plot(zer , ev)
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+m=1000
+
+ev=[]
+varr=[]
+E=0
+#uz=4
+uz = np.arange(3, 11)
+for j in uz:
+  result=[]
+  for i in range(m):
+    zer1 = np.random.randint(1,j+1)
+    zer2 = np.random.randint(1,j+1)
+    x=zer1+zer2
+    result.append(x)
+  E=sum(result)/len(result)
+  ev.append(E)
+  resultt=np.array(result)
+  var=np.average(resultt*2) - (np.average(resultt))*2   
+  varr.append(var)     
+#print(result)
+#print(E,var,sep='\n')
+print("Zərin üzləri:", uz)
+print("Varience:", varr)
+print("Expected value:", ev)
+plt.plot(uz, ev, label="Expected value")
+plt.plot(uz, varr, label="Variance")
+plt.xlabel("Zərin üzlərinin sayı")
+plt.legend()
+plt.show()
