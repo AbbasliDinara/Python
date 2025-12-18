@@ -1,0 +1,16 @@
+#Sual 2: 2 zər atılır. Expected value və variance-ı hesabla
+count1=0
+
+E=0
+n=10000
+for i in range(n):
+    zer1 = np.random.randint(1,7)
+    #zer2 = np.random.randint(1,7)
+    if np.random.randint(1,7) == 5:
+        count1 += 1
+
+for i in range(1,7):
+    E=i*count1/n+E
+    
+
+print(2*E)
