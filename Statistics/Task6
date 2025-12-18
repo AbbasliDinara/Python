@@ -1,16 +1,16 @@
 #Sual 5: Fərz edək ki, oyun oynayırıq. Zər 6 üzlüdür və əsl zərdir (bütün üzlərin düşmə ehtimalı eynidir)
 #2-ci zəri yalnız o vaxt atırıq ki, birincisi 3-dən az (3 daxil) olsun. Məs. birinci zər =5 olsa dayan.
 #2 olsa ikincini at və onların cəmini tap. PMF necə görünəcək?
+#Sual 6: Eyni ssenari amma fərq ondadır ki, ikinci zər bu dəfə birinci zər 3-dən böyük olanda (3 daxil) atırıq. PMF necə olacaq?
 import numpy as np
 import matplotlib.pyplot as plt
-d = {1:0, 2:0, 3:0, 4:0,5:0,6:0}
 
 n = 10000
 
 result=[]
 for i in range(n):
     zer1 = np.random.randint(1,7)
-    if zer1<4:
+    if zer1<=3:
         zer2 = np.random.randint(1,7)
         x=zer1+zer2
         result.append(x)
@@ -19,6 +19,6 @@ for i in range(n):
         x=zer1
         result.append(x)
         
-print(result)
+#print(result)
 plt.hist(result)
-plt.show()
+#plt.show()
