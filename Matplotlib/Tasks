@@ -1,0 +1,108 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(1,21,1)            
+exp = np.random.uniform(1,5,20)
+act = np.random.uniform(1,5,20)
+
+a
+plt.figure(figsize=(10,5))
+plt.plot(x,act, color = "red" , marker = "^" ,linewidth=3)
+plt.plot(x,exp , color= "green" ,linestyle='--')
+plt.legend(["Actual" , "Expected"] )
+plt.title("Expected and Actual")
+plt.axhline(2.0, color='black', linestyle=':',label="_nolegend_")
+plt.grid(True)
+#plt.savefig("Qrafik.png")
+plt.show()
+
+
+#2
+noise_data = np.random.randn(100)
+
+plt.figure(figsize=(12,6))
+window_size = 10
+filterr = np.ones(window_size)/window_size #0.1 10 eded yaardir briinici filteri edir yeni
+moving_avg = np.convolve(noise_data, filterr, mode='valid') #raw datani hamarlasdirir
+
+plt.plot(noise_data, color='gray', alpha=0.4, label='Noisy Data') 
+plt.plot(np.arange(9,100),moving_avg, color='red', linewidth=3, label='10-Point Moving Average') # 9-100e kimi ele
+plt.legend()
+plt.title("Noisy Data and 10-Point Moving Average")
+plt.grid(True)
+
+plt.show()
+
+
+
+
+#3
+step=8/399 #399interval var
+x = np.arange(-4,4+step,step)
+
+y=x**3-10*x
+
+positive=y>0
+negative=y<=0
+plt.plot(x[positive],y[positive],'g')
+plt.plot(x[negative],y[negative],'r')
+plt.axhline(0, color='black',label="_nolegend_",linewidth=1)
+plt.legend(["Positive" , "Negative"] )
+plt.title("Conditional Coloring")
+plt.grid(True)
+plt.show()
+
+
+
+#4
+
+
+x=np.arange(1,11)
+a=np.random.normal(7,2,10)
+b=a+np.random.normal(2,1,10)
+plt.figure(figsize=(8,4))
+plt.plot(a,color= "lightgray",linestyle='--')
+plt.plot(b,color="darkblue", linestyle='-')
+plt.title("Portfolio A vs B Return Difference")
+#plt.fill_between(x = x_val, y1 = y_val , y2 = 0 , where = (abs(x_val)>2) , color = "orange")
+#ax3.fill_between(x, y1, y2, where=y1 > y2, color='lightgreen', alpha=0.4)
+plt.fill_between(x-1,b,a,color="yellow")
+plt.show()
+
+
+
+#5
+points=np.arange(100) ## x e gore yavas ayvas artan xett yeni kicik noise elave etmek
+ano_p=0.5*points+np.random.normal(0,1,100)
+
+ano_p[10]=40
+ano_p[40]=10
+ano_p[90]=2
+
+plt.plot(points, ano_p, color="black",linewidth=1)
+
+#anomalous pointleri  ulduzla et
+
+plt.plot(points[10],ano_p[10], 'r*', markersize=12)
+plt.plot(points[40],ano_p[40], 'r*', markersize=12)
+plt.plot(points[90],ano_p[90], 'r*', markersize=12)
+
+maxx = np.argmax(ano_p)#maxi tap
+# Annotation
+plt.annotate('Extreme Spike', xy =( points[maxx], ano_p[maxx]),#annotation kordinanti
+                xytext =(points[maxx]+5, ano_p[maxx]+7) ,#annotiaon metn 
+                arrowprops = dict(facecolor ='green',
+                                  shrink = 2),)
+
+plt.xlim(-5, 110)
+plt.ylim(-5,55)
+
+
+plt.title("Line Plot and Outlier Annotation")
+plt.xlabel("Points")
+plt.ylabel("Value")
+plt.legend(["Line Plot" , "Outlier Annotation"])
+plt.grid(True)
+
+
+plt.show()
