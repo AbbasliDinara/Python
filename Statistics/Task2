@@ -1,16 +1,19 @@
 #Sual 2: 2 zər atılır. Expected value və variance-ı hesabla
-count1=0
+import numpy as np
 
-E=0
-n=10000
-for i in range(n):
-    zer1 = np.random.randint(1,7)
-    #zer2 = np.random.randint(1,7)
-    if np.random.randint(1,7) == 5:
-        count1 += 1
+n = 100000
+sums = []
 
-for i in range(1,7):
-    E=i*count1/n+E
-    
+for _ in range(n):
+    z1 = np.random.randint(1,7)
+    z2 = np.random.randint(1,7)
+    sums.append(z1 + z2)
+E=sum(sums)/n
+###E = np.mean(sums)
+summm=np.array(sums)
 
-print(2*E)
+var=np.average(summm**2)-np.average(summm)**2
+##Var = np.var(sums)
+
+print("Expected value:", E)
+print("Variance:", var)
