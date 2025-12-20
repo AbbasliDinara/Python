@@ -1,3 +1,75 @@
+'''
+Task 1: Dual Series, Threshold Line, and Legend Management
+Create two related data series representing "Expected" and "Actual" values, each with 20 random points.
+
+Requirements:
+
+Plot the Actual data series using a red, thick line (linewidth=3) and a triangle marker (^).
+
+Plot the Expected data series using a green, dashed line (linestyle='--') with no markers.
+
+Add a horizontal line at a Y value of 2.0 using a black, dotted line (plt.axhline()) to represent a threshold.
+
+Create a legend that displays only the Expected and Actual lines (exclude the horizontal threshold line from the legend).
+
+Task 2: Raw Data and Running Average Overlay
+Create a noisy data series with 100 points generated from a normal distribution: noise_data = np.random.randn(100).
+
+Requirements:
+
+Calculate a 10-point moving average (running average) to smooth the data (this requires the student to
+use NumPy functions like convolution or a rolling window calculation).
+
+Plot the raw data (noise_data) using a very thin, light gray line (alpha=0.4).
+
+On the same axes, plot the moving average line using a thick, dark red line.
+
+Set the title of the plot to "Noisy Data and 10-Point Moving Average".
+
+Task 3: Single Line Segmentation (Conditional Coloring)
+Plot the values of a function, for example, Y=X 
+3
+ −10⋅X, over the range [−4,4].
+
+Requirements:
+
+Generate the X and Y data points.
+
+Segment the Y values into two separate parts based on the conditions: Y>0 and Y≤0 (requires masking or splitting the data).
+
+Plot the segment containing positive values in green.
+
+Plot the segment containing negative or zero values in red.
+
+The final plot must show one continuous line where the color changes as the line crosses the
+X-axis (This is one of the most challenging applications of plt.plot()).
+
+Task 4: Visualizing the Difference Between Two Lines
+Generate 10 years of simulated returns for two different investment portfolios (A and B). 
+Ensure Portfolio B's returns are slightly higher than Portfolio A's.
+
+Requirements:
+
+Plot Portfolio A's returns using a light gray, dashed line.
+
+Plot Portfolio B's returns using a dark blue, solid line.
+
+Using plt.fill_between(), fill the entire area between the line for Portfolio A and 
+the line for Portfolio B with a very light yellow color.
+
+Set the title to "Portfolio A vs B Return Difference" and add appropriate X and Y axis labels.
+
+Task 5: Line Plot and Outlier Annotation (Custom Markers and Text)
+Generate 100 points following a gentle underlying trend. Deliberately introduce sharp outliers (anomalies) at a few specific
+indices (e.g., indices 10, 40, and 90).Requirements:Plot the primary data series (including the anomalies) using a thin, black line.
+Without using plt.scatter(), use a new plt.plot() call to highlight only the anomalous points using a large, 
+red star marker ('*').Use text annotation (plt.annotate()) to label the largest anomaly with the text
+"Extreme Spike" and an arrow pointing to the point.Manually set the $X$ and $Y$ axis limits (plt.xlim(),
+plt.ylim()) to ensure the entire graph is aesthetically framed, including the extreme outlier.
+
+
+
+'''
 
 
 import numpy as np
