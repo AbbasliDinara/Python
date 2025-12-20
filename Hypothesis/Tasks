@@ -1,0 +1,94 @@
+
+
+import numpy as np
+import scipy.stats
+
+#1
+pop_mean = 15
+sample_mean = 15.4
+pop_std = 2
+n = 100
+alpha = 0.05
+z_value = (sample_mean - pop_mean) / (pop_std/n**(0.5))
+z_value
+z_critical = scipy.stats.norm.ppf(1-alpha) #yuksek oldugunu iddia edir deye right ---
+z_critical 
+if z_value > z_critical:  # Right tailed
+    print("Reject Null hypothesis --> There's significant change between population and sample")
+else:
+    print("Failed to reject")
+    ## reject edirik z value cox oldugu ucun
+
+#2
+ex = np.array([3.1, 2.8, 3.5, 2.9, 3.2, 3.0, 3.1, 2.7, 3.4, 3.0, 3.3, 2.9])
+n =12
+sample_mean2 = np.mean(ex)  
+alpha = 0.01
+# stndart dev bilinmir t test it edirik alpha 
+pop_mean2=3
+s = np.std(ex, ddof=1) # std varmis
+t_value= (sample_mean2 - pop_mean2) / (s/n**(0.5))
+
+df=11 #n-1
+t_critical = scipy.stats.t.ppf(alpha , df) ##kicikdir deye sol tailed 3 deqden az
+if t_value< t_critical:  # left tailed
+    print("Reject Null hypothesis --> There's significant change between population and sample")
+else:
+    print("Failed to reject")
+
+
+
+
+#3
+n=8
+ex2= [3, 1, 5, -1, 2, 4, 3, 0, 6, 2] #ele ozu diffdir samp mean- pop mean
+alpha = 0.05
+sample_mean3 = np.mean(ex2) 
+s2 = np.std(ex2, ddof=1)
+t_value2 = sample_mean3 / (s2/ n**(0.5))
+
+df = 7
+
+t_critical2 = scipy.stats.t.ppf(1-alpha , df=df) # artirib artirmadi sorusur deye righ tailed
+
+if t_value2>t_critical2:  # Right tailed
+    print("Reject Null hypothesis --> There's significant change between population and sample")
+else:
+    print("Failed to reject")
+
+
+#4
+pop_mean4 = 8.0      
+pop_std4 = 1.5     
+n = 64         
+sample_mean4 = 8.6     
+alpha = 0.02    
+#Onlar son bir ildəki gəlirin tarixi ortalamadan fərqli olub-olmadığını bilmək istəyirlər two taileddir yeni
+z_value4 = (sample_mean4 - pop_mean4) / (pop_std4/n**(0.5))
+z_critical4 = scipy.stats.norm.ppf(1 - (alpha/2)) #2 tailed
+
+if abs(z_value4) > z_critical4:
+    print("Reject Null hypothesis --> There's significant change between population and sample")
+else:
+    print("Failed to reject")
+    
+
+
+#5
+#2 smple test olan variant
+n_x=30
+n_y=25
+pop_mean_x=78
+pop_mean_y=75
+s_x=6.5
+s_y=7
+alpha = 0.05
+t_value5 = (pop_mean_x- pop_mean_y) / np.sqrt(s_x**2 / n_x + s_y**2 / n_y)
+
+df=n_x+n_y-2
+t_critical5 = scipy.stats.t.ppf(1-alpha , df=df) # sag yene yuksek deyir
+
+if t_value5>t_critical5:  # Right tailed
+    print("Reject Null hypothesis --> There's significant change between population and sample")
+else:
+    print("Failed to reject")
