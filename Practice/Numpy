@@ -1,0 +1,36 @@
+'''
+ Ölçüsü (6 × 4) olan təsadüfi tam ədədlərdən ibarət bir 
+ NumPy massivi yaradın (ədədlər 1 ilə 50 aralığında olsun). Aşağıdakı tapşırıqları yerinə yetirin:
+
+Massivin hər sətrinin cəmini hesablayın.
+Massivin hər sütununun orta qiymətini tapın.
+Ümumi orta qiymətdən böyük olan elementləri ayrıca bir massivə çıxarın.
+İlkin massivdəki ən böyük və ən kiçik elementlərin fərqini (max - min) hesablayın.
+Nəticələri ekrana açıq və səliqəli formatda çap edin.
+'''
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+arr12=np.random.randint(1,50,24)
+arr23=arr12.reshape(6,4)
+
+row_sum=np.sum(arr23,axis=1)
+row_sum
+
+
+column_sum=np.mean(arr23,axis=0)
+column_sum
+
+meann=np.mean(arr23)
+boyuk_mean=arr23[arr23>meann]
+boyuk_mean
+
+
+maxx1=np.max(arr23)
+minn1=np.min(arr23)
+
+difference=maxx1-minn1
+difference
