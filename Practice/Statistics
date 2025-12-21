@@ -1,0 +1,19 @@
+'''
+2. Iki nefer bir birile 12:00 ile 13:00 arasi gorusmek qerari alib. Amma onlarin bir birile
+elaqesi yoxdur ve goruse ne vaxt geleceklerini bilmirler. Bele razilasirlar ki, birinci 
+kim gelirse 15 deqiqe gozleyir. Eger diger sexs 15 deqiqe erzinde gelmese gorus bas tutmur. 
+Law of large numbers-den istifade ederek gorusun bas tutma ehtimalini hesablayin.
+Qeyd: Calisin vergulden sonraki, 2 reqeme qeder duz olsun 
+
+'''
+
+n=100000
+
+a=np.random.uniform(0,60,n)
+b=np.random.uniform(0,60,n)
+
+
+gorus=np.abs(a-b)<=15
+
+eht=np.mean(gorus)
+print(eht*100,"%")
