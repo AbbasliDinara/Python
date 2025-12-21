@@ -1,0 +1,53 @@
+'''
+
+İki zaman seriyası (y1 və y2) verilmişdir. Bu seriyaların qiymətlərini özünüz yaradın və aşağıdakı
+tələblərə uyğun olaraq vizuallaşdırma proqramı yazın:
+
+y1 və y2 eyni qrafik üzərində müxtəlif rənglər və müxtəlif xətt formaları ilə (plot) çəkilməlidir.
+
+Qrafikdə legend mütləq istifadə olunmalıdır.
+
+y1 və y2 arasındakı sahə fill_between funksiyası ilə bir rənglə doldurulmalıdır.
+
+Zaman boyunca seriyalardan biri digərindən müxtəlif intervallarda böyük olmalıdır (bəzi hissələrdə y1 > y2, bəzi hissələrdə isə y2 > y1).
+
+|y1 - y2| fərqinin ən böyük olduğu interval tapılmalı, həmin nöqtədə qrafik üzərində şaquli xətt (vertical line) çəkilməlidir.
+
+Həmin şaquli xəttin yanında maksimum fərqin qiyməti mətn kimi göstərilməlidir.
+
+Qrafikdə x və y oxlarının adları (xlabel, ylabel) göstərilməlidir.
+
+
+y1 = [10, 12, 13, 15, 14, 16, 17, 16, 15, 14]
+y2 = [12, 15, 16, 20, 18, 21, 25, 22, 20, 19]
+'''
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+x=np.arange(1,11)
+
+list1=[10, 12, 13, 15, 14, 16, 17, 16, 15, 14]
+list2=[12, 15, 16, 20, 18, 21, 25, 22, 20, 19]
+
+arr1=np.array(list1)
+arr2=np.array(list2)
+
+
+plt.plot(arr1,color='grey',linestyle='dashed',linewidth=3)
+
+plt.plot(arr2,color='red',linewidth=3,alpha=0.5)
+
+
+plt.fill_between(x-1,arr1,arr2,color="yellow")
+
+
+maxx_arr1=max(arr1)
+maxx_arr2=max(arr2)
+
+plt.vlines(6,ymin = maxx_arr1, ymax = maxx_arr2,color='red')
+
+plt.title("Fill betwwen")
+plt.xlabel("Points")
+plt.ylabel("Value")
+plt.legend(["arr1" , "arr2"])
