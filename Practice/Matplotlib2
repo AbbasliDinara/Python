@@ -1,0 +1,61 @@
+'''
+5. 
+aylar = ['Yan', 'Feb', 'Mar', 'Apr', 'May', 'İyun']
+satış = [150, 200, 180, 220, 170, 210]
+
+Sol subplot (bar chart):
+
+Ayları x oxu, satış ədədlərini y oxu olaraq göstərin.
+Hər bar üçün fərqli rənglər istifadə edin.
+Hər barın yuxarısında satış rəqəmini annotate ilə yazın.
+Başlıq, ox adları və grid əlavə edin.
+
+Sağ subplot (pie chart):
+
+Hər ayın satışının ümumi satışa nisbətini göstərin.
+Hər dilimi fərqli rənglə göstərin və % göstərici əlavə edin. En boyuk hisseni ayirin.
+Başlıq əlavə edin və pie chart üzərində legend istifadə edin.
+Qrafikləri oxunaqlı, estetik və balanslı göstərin.
+
+'''
+
+satis= [150, 200, 180, 220, 170, 210]
+satis=np.array(satis)
+month = ['Yan', 'Feb', 'Mar', 'Apr', 'May', 'İyun']
+month = np.array(month)
+
+
+#plt.bar(month,satis)
+
+
+for i in range(len(month)):
+    ax[0].text(x = month[i], y = satis[i], s= str((round(satis[i],2))))
+
+fig,ax = plt.subplots(nrows = 2, ncols = 1,figsize=(10, 7))
+
+ax[0].bar(month,satis)
+
+ax[0].set_title("Bar Chart")
+ax[0].set_xlabel("Month") 
+ax[0].set_ylabel("Value")
+for i in range(len(month)):
+    ax[0].text(x=i, y=satis[i]+5, s=str(satis[i]), ha='center', va='bottom')
+    
+ax[0].grid()
+
+ax[1].pie(satis, labels=month, autopct="%.2f%%", startangle=90, shadow=True, explode=explode)
+ax[1].set_title("Pie Chart")
+ax[1].legend(month, title="Months", loc="upper right")
+ax[1].axis('equal') 
+plt.title
+plt.tight_layout()
+
+
+max_index = np.argmax(satis)   
+
+explode = [0]*len(satis)
+explode[max_index] =0.01
+
+
+
+plt.show()
