@@ -1,0 +1,32 @@
+'''
+Ikinci ay imtahan:
+1. Bir istehsal şirkəti iddia edir ki, 
+onun məhsullarının orta xidmət müddəti 500 saatdır.
+Keyfiyyətə nəzarət şöbəsi bu iddianı yoxlamaq üçün təsadüfi olaraq 36 məhsul seçmişdir. Aparılan ölçmələr 
+nəticəsində seçilmiş məhsulların orta xidmət müddəti 470 saat, nümunə standart kənarlaşması isə 60 saat olmuşdur.
+
+
+Əhəmiyyətlilik səviyyəsi α = 0.05 olmaqla, şirkətin iddiasını t-testindən istifadə edərək yoxlayın.
+'''
+
+import numpy as np
+import scipy.stats
+
+
+n=36
+pop_mean = 500
+sample_mean = 470
+alpha = 0.05
+sample_std=60
+df = n-1
+
+t_value= (sample_mean - pop_mean) / (sample_std/n**(0.5))
+t_critical = scipy.stats.t.ppf(1-alpha , df=df) #  right tailed
+#t_critical = scipy.stats.t.ppf(alpha, df = df) ##leftt 
+#t_critical = scipy.stats.t.ppf(1 - (alpha/2), df= df)
+if t_value>t_critical:  # roght tailed
+    print("Reject Null hypothesis")
+else:
+    print("Failed to reject")
+
+    
