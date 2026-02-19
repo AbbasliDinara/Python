@@ -1,0 +1,14 @@
+a = int(input())
+b = int(input())
+c = int(input())
+d = int(input())
+
+# ya bir vahid cox ya aaz
+if abs(a-c)==1 and abs(b-d)==1:
+    print("YES")
+elif abs(a-c)==1 and abs(b-d)==0:
+    print("YES")
+elif abs(b-d)==1 and abs(a-c)==0:
+    print("YES")
+else:
+    print("NO")
