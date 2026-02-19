@@ -1,0 +1,14 @@
+
+# her iisi ya cut olsmlidir ya da her ikisi tek olamldiir
+a1 = int(input())
+a2 = int(input())
+b1= int(input())
+b2 = int(input())
+
+#ya iksiinin cemi tek olmaldiir ya cut yes olmasi ucun
+if (a1+b1)%2==1 and (a2+b2)%2==1:
+    print("YES")
+elif (a1+b1)%2==0 and (a2+b2)%2==0:
+    print("YES")
+else:
+    print("NO")
