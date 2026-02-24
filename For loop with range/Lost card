@@ -1,0 +1,13 @@
+sum=0
+total=0
+n=int(input())
+
+for j in range(n-1):
+    b=int(input())
+    total=total+b
+
+for i in range(n+1):
+    sum=sum+i
+
+
+print(sum-total)
