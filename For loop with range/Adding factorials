@@ -1,0 +1,13 @@
+
+
+total=1
+sum=0
+a = int(input())
+
+for i in range(a):
+    i=i+1
+    total=total*i
+    sum=sum+total
+
+    
+print(sum)
