@@ -1,0 +1,10 @@
+j=2
+
+
+a = int(input())
+for i in range(a):
+    for x in range(1,j):
+        print(x, end="")
+    print("\n")
+    j=j+1
+    
