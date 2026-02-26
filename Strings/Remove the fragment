@@ -1,0 +1,11 @@
+
+last=0
+
+a = str(input())
+first=a.find("h")
+for i in range(len(a)):
+    if a[i]=="h":
+        #print(i)
+        last=i
+print(a[:first]+a[last+1:])
+    
