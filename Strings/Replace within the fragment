@@ -1,0 +1,22 @@
+
+a = str(input())
+
+first=a.find("h")
+last=0
+z=""
+for i in range(len(a)):
+    if a[i]=="h":
+        last=i
+for i in range(len(a)):
+    
+    if i!=first and i!=last and a[i]=="h":
+        z+="H"
+    else:
+        z+=a[i]
+   
+        
+   
+        
+print(z)
+
+
