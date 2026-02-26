@@ -1,0 +1,5 @@
+
+# print(a, b)
+a = str(input())
+z=a.replace("@","")
+print(z)
