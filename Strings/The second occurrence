@@ -1,0 +1,20 @@
+
+a = str(input())
+#print(a.find("f"))
+first=a.find("f")
+leng=len(a)
+last=0
+count=0
+for i in range(leng):
+    if a[i]=='f':
+        last=i
+        count=count+1
+        if count==2:
+            break
+        
+if count==0:
+    print("-2")
+elif count==1:
+    print("-1")
+elif count==2:
+    print(i)
