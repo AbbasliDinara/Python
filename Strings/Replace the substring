@@ -1,0 +1,19 @@
+
+# print(a, b)
+a = str(input())
+#if type(a)==int:
+ #   a=str(a)
+
+#print(a.find("1"))
+if a.find("1")==-1:
+    x=a
+else:
+    for i in range(len(a)):
+        if a[i]=='1':
+            x=a.replace("1","one")
+print(x)
+
+
+
+        
+
