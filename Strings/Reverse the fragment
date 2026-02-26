@@ -1,0 +1,16 @@
+
+last=0
+count=0
+a = str(input())
+first=a.find("h")
+for i in range(len(a)):
+    if a[i]=="h":
+        count+=1
+        #print(i)
+        last=i
+if count==2 and first==0:
+    print(a[first]+a[last-1:first:-1]+a[last])
+else:
+    print(a[:first]+a[last:first-1:-1]+a[last+1:])
+
+    
