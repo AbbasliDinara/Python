@@ -1,0 +1,16 @@
+
+a = str(input())
+#print(a.find("f"))
+first=a.find("f")
+leng=len(a)
+last=0
+for i in range(leng):
+    if a[i]=='f':
+        last=i
+        i+=i
+if last==0:
+    print(" ")
+elif first==last:
+    print(first)
+else:
+    print(first,last)
