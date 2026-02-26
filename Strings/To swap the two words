@@ -1,0 +1,3 @@
+a = str(input())
+#print(a.find(" "))
+print(a[a.find(" ")+1:]+" "+a[:a.find(" ")])
