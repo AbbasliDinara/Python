@@ -1,0 +1,23 @@
+first=int(input())
+count=1
+max_count=1
+while True:
+    second=int(input())
+    if second!=0:
+        if second==first:
+            count+=1
+        else:
+            if count>max_count:
+                max_count=count
+            count=1
+        first=second
+        
+    else:
+      break
+if max_count>count:
+    print(max_count)
+else:
+    print(count)
+
+
+
