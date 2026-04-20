@@ -1,0 +1,22 @@
+'''i = 0
+while True:
+    a = int(input())
+    if a == 0:
+        break
+    i += 1
+    if a > last:
+        last = a
+'''
+last=0
+i=0
+index=0
+while True:
+    a=int(input())
+    if a==0:
+        break
+    index+=1
+    if last<a:
+        last=a
+        i=index
+print(i)
+#gptdan komek aldim
