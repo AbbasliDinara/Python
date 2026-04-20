@@ -1,0 +1,8 @@
+a=int(input())
+j=2
+count=0
+total=1
+while total*j<=a:
+  count+=1
+  total=total*j
+print(count,total)
