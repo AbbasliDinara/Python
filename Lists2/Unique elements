@@ -1,0 +1,12 @@
+#tekce 1 defe ist olunan ededleri print ele
+a=input().split()
+my_list=[]
+my_list.append(a)
+result=[]
+count=1
+for i in range(len(a)):
+        if a.count(a[i])==1:
+            result.append(a[i])
+print(*result) 
+            
+        
