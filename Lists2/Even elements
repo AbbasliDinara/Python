@@ -1,0 +1,9 @@
+
+a = input().split()
+my_list=[]
+my_list.append(a)
+for i in range(len(a)):
+    if int(a[i])%2==0:
+        print(a[i],end=" ")
+       
+      
