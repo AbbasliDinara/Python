@@ -1,0 +1,15 @@
+a = input().split()
+my_list=[]
+my_list.append(a)
+#second=int(a[i+1])#1
+
+for i in range(0,len(a)-1,2):
+    sabit=int(a[i])
+    a[i]=a[i+1]
+    a[i+1]=sabit
+print(*a)
+
+
+   
+#cut indexdekiler 1 tik evvele gelir
+#eger indexi cut ededdirse bir evvelki ile yer deyis
