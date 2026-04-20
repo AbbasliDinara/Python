@@ -1,0 +1,9 @@
+last=0
+while True:
+    a=int(input())
+    if a!=0:
+        if last<a:
+            last=a
+    else:
+      break
+print(last)
