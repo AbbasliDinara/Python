@@ -1,0 +1,11 @@
+i=0
+total=0
+while True:
+    a=int(input())
+    if a!=0:
+        i=i+1
+        total=total+a
+    else:
+      break
+print(total/i)
+
