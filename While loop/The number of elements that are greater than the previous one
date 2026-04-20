@@ -1,0 +1,23 @@
+'''
+last=0
+i=0
+index=0
+while True:
+    a=int(input())
+    if a==0:
+        break
+    if last<a:
+        last=a
+        i=i+1
+print(i-1)'''
+i=0
+first_num=int(input())
+while True:
+    current_num=int(input())
+    if current_num==0 or first_num==0:
+        break
+    if current_num>first_num:
+        i=i+1
+    first_num=current_num
+print(i)
+#ikieded goturme fikri gptdan aldim 
