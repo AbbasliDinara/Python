@@ -1,0 +1,11 @@
+a=input().split()
+my_list=[]
+my_list.append(a)
+i=0
+index=0
+max_value=int(a[0])
+for i in range(len(a)):
+    if int(a[i])>max_value:
+        max_value=int(a[i])
+        index=i
+print(max_value,index)
