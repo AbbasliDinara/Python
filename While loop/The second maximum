@@ -1,0 +1,14 @@
+
+last=0 #max2
+first_num=int(input()) #max1
+while True:
+    current_num=int(input())
+    if current_num==0 or first_num==0:
+        break
+    if current_num>first_num:
+        last=first_num
+        first_num=current_num
+    elif current_num>last:
+        last=current_num
+
+print(last)
