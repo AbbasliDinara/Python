@@ -1,0 +1,14 @@
+
+i=0
+last=0
+while True:
+    current_num=int(input())
+    if current_num==0:
+        break
+    if current_num>last:
+        last=current_num
+        i=1
+    elif current_num==last:
+       i=i+1
+
+print(i)
