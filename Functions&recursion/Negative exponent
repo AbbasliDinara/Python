@@ -1,0 +1,10 @@
+# Read an integer:
+# a = int(input())
+# Read a float:
+# b = float(input())
+# Print a value:
+# print(a, b)
+def power(a,b):
+    x=a**b
+    print(x)
+power(a = float(input()),b = float(input()))
