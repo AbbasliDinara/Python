@@ -1,0 +1,21 @@
+def capitalize(a):
+    result=""
+    for i in range(len(a)):
+        if i==0:
+            result+=a[i].upper()
+        elif a[i-1]==" ":
+            result+=a[i].upper()
+        else:
+            result+=a[i]
+    print(result)
+#a=str(input())
+
+    
+
+capitalize(a=str(input()))
+
+
+
+
+
+#my_function(a=str(input()))
