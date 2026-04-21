@@ -1,0 +1,11 @@
+'''a = float(input())
+b = float(input())
+c = float(input())
+d = float(input())'''
+import math
+
+def mesafe(a,b,c,d):
+    x = math.sqrt((a - c)**2 + (b - d)**2)
+    print(x)
+
+mesafe(a = float(input()),b = float(input()),c = float(input()),d = float(input()))
