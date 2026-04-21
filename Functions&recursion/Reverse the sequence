@@ -1,0 +1,8 @@
+def recursion():
+    n = int(input())
+    if n != 0:
+        recursion()
+    print(n)
+
+recursion()
+##gpt ist etdim
