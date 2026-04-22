@@ -1,0 +1,20 @@
+a = int(input())
+array=[]
+for i in range(a):
+    row=[]
+    for j in range(a):
+        row.append(1)
+    array.append(row)
+for i in range(a):
+    for j in range(a):
+        if i+j>a-1:
+            array[i][j]=2
+        elif i+j<a-1:
+            array[i][j]=0
+        
+
+
+
+
+for row in array:
+    print(*row)
