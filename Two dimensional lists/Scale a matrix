@@ -1,0 +1,15 @@
+a, b = map(int, input().split())
+
+array=[]
+for i in range(a):
+        row = list(map(int, input().split()))
+        array.append(row)
+c=int(input())
+
+for i in range(a):
+    for j in range(b):
+        array[i][j] = c*array[i][j]  
+        
+for row in array:
+    print(*row)
+
