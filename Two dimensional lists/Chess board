@@ -1,0 +1,17 @@
+a, b = map(int, input().split())
+
+array=[]
+for i in range(a):
+    row=[]
+    for j in range(b):
+        row.append(".")
+    array.append(row)
+for i in range(a):
+    for j in range(b):
+        if i%2!=0 and j%2==0:
+            array[i][j]="*"
+        elif i%2==0 and j%2!=0:
+            array[i][j]="*"
+    
+for row in array:
+    print(" ".join(row))
