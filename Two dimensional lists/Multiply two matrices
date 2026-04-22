@@ -1,0 +1,25 @@
+a,b,c = map(int,input().split())
+array=[]
+array2=[]
+
+for i in range(a):
+    row=list(map(int,input().split()))
+    array.append(row)
+
+for j in range(b):
+    row2=list(map(int,input().split()))
+    array2.append(row2)
+    
+array3 = [[0]*c for _ in range(a)]    
+for i in range(a):
+    for j in range(c):
+        for k in range(b):
+            array3[i][j] += array[i][k] * array2[k][j]
+             
+          
+            
+
+
+for row in array3:
+    print(*row)
+    
