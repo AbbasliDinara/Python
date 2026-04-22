@@ -1,0 +1,15 @@
+a = int(input())
+array=[]
+
+for i in range(a):
+    row=[]
+    for j in range(a):
+        row.append(abs(i-j))
+    array.append(row)
+
+        
+        
+for row in array:
+    for i in row:
+        print(i,end=" ")
+    print()
