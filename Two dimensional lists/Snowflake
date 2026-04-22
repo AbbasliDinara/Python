@@ -1,0 +1,22 @@
+a = int(input())
+array=[]
+mid1=a//2
+
+for i in range(a):
+    row=[]
+    for j in range(a):
+         row.append(".")
+
+         
+    array.append(row)
+for i in range(a):
+    for j in range(a):
+        if i==mid1 or j==mid1:
+            array[i][j]="*"
+        elif i==j or i+j==a-1:
+            array[i][j]="*"
+
+ 
+   
+for row in array:
+   print(" ".join(row))
