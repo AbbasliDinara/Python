@@ -1,0 +1,21 @@
+n,k=map(int,input().split())
+matrix = []
+
+for i in range(n):
+    row = [int(x) for x in input().split()]  # gpt komek eledi
+    matrix.append(row)
+
+#for row in matrix:
+ #   print(*row)
+first=matrix[0][0]
+max_value=matrix[0][0]
+max_i=0
+max_j=0
+for i in range(len(matrix)):# sətir döngüsu
+    for j in range(len(matrix[i])):  # sütun döngüsü
+        if matrix[i][j]>first:
+            max_value=matrix[i][j]
+            max_i=i
+            max_j=j
+            first=matrix[i][j]
+print(max_i,max_j)
